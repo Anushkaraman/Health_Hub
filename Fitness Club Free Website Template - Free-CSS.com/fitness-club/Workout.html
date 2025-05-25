@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workout Progress and Exercises</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: url('https://c8.alamy.com/comp/2DFKY79/hand-drawn-seamless-pattern-of-fitness-gym-equipments-doodle-sketch-style-sport-element-drawn-by-digital-brush-pen-illustration-for-icon-frame-background-2DFKY79.jpg') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .overlay {
+            background-color: rgba(252, 248, 251, 0.7);
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 0;
+        }
+
+        .container {
+            text-align: center;
+            background-color: rgba(227, 204, 177, 0.9);
+            padding: 20px;
+            border-radius: 16px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            margin: 20px 0;
+            width: 90%;
+            max-width: 1200px;
+            z-index: 1;
+            position: relative;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Poppins', sans-serif;
+            color: #444;
+            font-weight: bold;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #b306fe;
+            font-weight: bold;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        h2 {
+            font-size: 28px;
+            color: #f81766;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif    
+        }
+
+        h3 {
+            font-size: 24px;
+            cursor: pointer;
+            color: #00cec9;
+        }
+
+        .progress-bar {
+            width: 100%;
+            background-color: #f7f8f9;
+            border-radius: 25px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+
+        .progress {
+            height: 25px;
+            background: linear-gradient(to right, #74b9ff, #a29bfe);
+            width: 0%;
+            transition: width 0.5s;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            background: linear-gradient(to right, #fab1a0, #ff7675);
+            color: #fff;
+            font-size: 16px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background: linear-gradient(to right, #ff7675, #fab1a0);
+        }
+
+        .exercise-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .exercise {
+            margin: 10px;
+            text-align: center;
+            flex: 1 0 45%;
+            box-sizing: border-box;
+            background-color: #f8edeb;
+            padding: 15px;
+            border-radius: 16px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .exercise h2, .exercise h3 {
+            font-size: 20px;
+            cursor: pointer;
+            color: #2d3436;
+        }
+
+        .exercise p {
+            margin-top: 10px;
+            color: #636e72;
+        }
+
+        iframe {
+            border: 0;
+            width: 100%;
+            height: 180px;
+            border-radius: 16px;
+        }
+
+        @media (max-width: 768px) {
+            .exercise {
+                flex: 1 0 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay"></div>
+    <div class="container">
+        <h1>Overall Progress</h1>
+        <div class="progress-bar" id="progress-bar">
+            <div class="progress" id="progress"></div>
+        </div>
+        <p id="progress-text">0 videos watched out of 20. 20 left.</p>
+        <p id="message" style="color: #2ecc71; font-weight: bold;"></p>
+    </div>
+
+    <div class="container">
+        <h1>Daily Progress</h1>
+        <div class="progress-bar" id="day-progress-bar">
+            <div class="progress" id="day-progress"></div>
+        </div>
+        <p id="day-progress-text">Day 0 completed out of 5. 5 left.</p>
+    </div>
+
+    <div class="container">
+        <h1>Workout Exercises</h1>
+        <h2>Day 1</h2>
+        <div class="exercise-list">
+            <div class="exercise">
+                <h3>Easy Level Workouts</h3>
+                <iframe src="https://www.youtube.com/embed/90AABclAL1M?si=VQQoo2aI44TL2AWX" allowfullscreen></iframe>
+                <p>Push-ups</p>
+                <button onclick="updateProgress(1)">Completed Exercise</button>
+            </div>
+            <div class="exercise">
+                <h3>Easy Level Workouts</h3>
+                <iframe src="https://www.youtube.com/embed/4KmY44Xsg2w?si=R3ZmXUOUJfgY36-6" allowfullscreen></iframe>
+                <p>Squats</p>
+                <button onclick="updateProgress(1)">Completed Exercise</button>
+            </div>
+            <div class="exercise">
+                <h3>Easy Level Workouts</h3>
+                <iframe src="https://www.youtube.com/embed/ASdqJoDPMHA?si=Q3YgVQLqqhKhGu52" allowfullscreen></iframe>
+                <p>Lunges</p>
+                <button onclick="updateProgress(1)">Completed Exercise</button>
+            </div>
+            <div class="exercise">
+                <h3>Easy Level Workouts</h3>
+                <iframe src="https://www.youtube.com/embed/nGaXj3kkmrU?si=ssURnQ2H7EZjHps1" allowfullscreen></iframe>
+                <p>Jumping Jacks</p>
+                <button onclick="updateProgress(1)">Completed Exercise</button>
+            </div>
+        </div>
+        
+        <h2>Day 2</h2>
+        <div class="exercise-list">
+            <div class="exercise">
+                <h3>Easy Level Workouts</h3>
+                <iframe src="https://www.youtube.com/embed/ymdS7tM0zws?si=TFHoOHZck88vn-Qz" allowfullscreen></iframe>
+                <p>High Knees</p>
+                <button onclick="updateProgress(2)">Completed Exercise</button>
+            </div>
+            <div class="exercise">
+                <h3>Intermediate Level Workouts</h3>
+                <iframe src="https://www.youtube.com/embed/TU8QYVW0gDU" allowfullscreen></iframe>
+                <p>Burpees</p>
+                <button onclick="updateProgress(2)">Completed Exercise</button>
+            </div>
+            <div class="exercise">
+                <h3>Intermediate Level Workouts</h3>
+                <iframe src="https://www.youtube.com/embed/AWz_7B1cch0?si=8GPhgfuECnghY36-6" allowfullscreen></iframe>
+                <p>Tricep Dips</p>
+                <button onclick="updateProgress(2)">Completed Exercise</button>
+            </div>
+            <div class="exercise">
+                <h3>Intermediate Level Workouts</h3>
+                <iframe src="https://www.youtube.com/embed/pSHjTRCQxIw" allowfullscreen></iframe>
+                <p>Plank</p>
+                <button onclick="updateProgress(2)">Completed Exercise</button>
+            </div>
+        </div>
+
+        <h2>Day 3</h2>
+        <div class="exercise-list">
+            <div class="exercise">
+                <h3>Intermediate Level Workouts</h3>
+                <iframe src="https://www.youtube.com/embed/wnuLak2onoA?si=XhkXWi1WfXX77LTn" allowfullscreen></iframe>
+                <p>Bicycle Crunches</p>
+                <button onclick="updateProgress(3)">Completed Exercise</button>
+            </div>
+            <div class="exercise">
+                <h3>Intermediate Level Workouts</h3>
+                <iframe src="https://www.youtube.com/embed/wPM8icPu6H8" allowfullscreen></iframe>
+                <p>Glute Bridges</p>
+                <button onclick="updateProgress(3)">Completed Exercise</button>
+            </div>
+            <div class="exercise">
+                <h3>Hard Level Workouts</h3>
+                <iframe src="https://www.youtube.com/embed/pYx7CRs7kAM?si=awlsUzvgNt7Bt2bb" allowfullscreen></iframe>
+                <p>Handstand Push-ups</p>
+                <button onclick="updateProgress(3)">Completed Exercise</button>
+            </div>
+        </div>
+
+        <h2>Day 4</h2>
+        <div class="exercise-list">
+            <div class="exercise">
+                <h3>Hard Level Workouts</h3>
+                <iframe src="https://www.youtube.com/embed/65NRu9mQfgQ?si=7hpQuMSr9bTOOWr8" allowfullscreen></iframe>
+                <p>Pull-ups</p>
+                <button onclick="updateProgress(4)">Completed Exercise</button>
+            </div>
+            <div class="exercise">
+                <h3>Hard Level Workouts</h3>
+                <iframe src="https://www.youtube.com/embed/kNIInK_Le8I?si=2uLunIAPdEupfqbw" allowfullscreen></iframe>
+                <p>Box Jumps</p>
+                <button onclick="updateProgress(4)">Completed Exercise</button>
+            </div>
+            <div class="exercise">
+                <h3>Hard Level Workouts</h3>
+                <iframe src="https://www.youtube.com/embed/_jG9V9o8Rmg?si=iyRRxr_Zy7KujhXP" allowfullscreen></iframe>
+                <p>Muscle-ups</p>
+                <button onclick="updateProgress(4)">Completed Exercise</button>
+            </div>
+            <div class="exercise">
+                <h3>Expert Level Workouts</h3>
+                <iframe src="https://www.youtube.com/embed/rIfZl6RxVAU?si=JO5LM6aWBe5k72Iu" allowfullscreen></iframe>
+                <p>Front Lever</p>
+                <button onclick="updateProgress(4)">Completed Exercise</button>
+            </div>
+        </div>
+
+        <h2>Day 5</h2>
+        <div class="exercise-list">
+            <div class="exercise">
+                <h3>Expert Level Workouts</h3>
+                <iframe src="https://www.youtube.com/embed/U5pviWt7sMo?si=AYBvg0aLaHncSlLf" allowfullscreen></iframe>
+                <p>Dragon Flag</p>
+                <button onclick="updateProgress(5)">Completed Exercise</button>
+            </div>
+            <div class="exercise">
+                <h3>Expert Level Workouts</h3>
+                <iframe src="https://www.youtube.com/embed/aHAlEv4yTkA?si=D-wZHthstgMGaE2D" allowfullscreen></iframe>
+                <p>Human Flag</p>
+                <button onclick="updateProgress(5)">Completed Exercise</button>
+            </div>
+            <div class="exercise">
+                <h3>Expert Level Workouts</h3>
+                <iframe src="https://www.youtube.com/embed/ccMdr-Z5NuM?si=ANEBmPqKAHpmRNK8" allowfullscreen></iframe>
+                <p>Planche</p>
+                <button onclick="updateProgress(5)">Completed Exercise</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let videosWatched = 0;
+        let daysCompleted = 0;
+        const totalVideos = 20;
+        const totalDays = 5;
+
+        function updateProgress(day) {
+            if (videosWatched < totalVideos) {
+                videosWatched++;
+                const progressPercentage = (videosWatched / totalVideos) * 100;
+                document.getElementById('progress').style.width = progressPercentage + '%';
+                document.getElementById('progress-text').textContent = `${videosWatched} video${videosWatched > 1 ? 's' : ''} watched out of ${totalVideos}. ${totalVideos - videosWatched} left.`;
+                
+                // Check if the day is completed
+                if (videosWatched % 4 === 0 && videosWatched !== 0) {
+                    daysCompleted++;
+                    const dayProgressPercentage = (daysCompleted / totalDays) * 100;
+                    document.getElementById('day-progress').style.width = dayProgressPercentage + '%';
+                    document.getElementById('day-progress-text').textContent = `Day ${daysCompleted} completed out of ${totalDays}. ${totalDays - daysCompleted} left.`;
+                    document.getElementById('message').textContent = `Congratulations! You have completed Day ${day} exercises!`;
+                }
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const sections = document.querySelectorAll(".exercise h3");
+
+            sections.forEach(section => {
+                section.addEventListener("click", function() {
+                    const exerciseList = this.nextElementSibling;
+                    if (exerciseList.style.display === "none" || exerciseList.style.display === "") {
+                        exerciseList.style.display = "block";
+                    } else {
+                        exerciseList.style.display = "none";
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

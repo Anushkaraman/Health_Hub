@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Health Hub!!!</title>
+    <style>
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    text-align: center;
+}
+h1 {
+    background-color: #8ad3f2;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 50px;
+    color: white;
+    padding: 20px 0;
+    margin: 0;
+}
+.tabs {
+    margin: 20px 0;
+}
+.tabs a {
+    text-decoration: none;
+}
+.tabs button {
+    background-color: #6bbdcb; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: double;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    display: inline-block;
+    font-size: 20px;
+    margin: 4px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Box shadow */
+}
+.tabs button:hover {
+    background-color: white;
+    color: black;
+    border: 2px solid #4CAF50;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Increased shadow on hover */
+}
+.mySlides {
+    display: none;
+}
+img {
+    vertical-align: middle;
+    width: 100%; /* Ensure the images fill the container width */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 500px; /* Set a maximum height for all images */
+    object-fit: cover; /* Cover the container while maintaining aspect ratio */
+}
+.slideshow-container {
+    position: relative;
+    width: 100%; /* Make the container full width */
+    max-width: 1500px; /* Set a maximum width */
+    margin: auto;
+}
+.text {
+    color: #ffffff;
+    font-size: 20px; /* Increased font size */
+    padding: 12px 20px; /* Added padding for better spacing */
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.6); /* Darker background for better contrast */
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; /* Matching font */
+    border-radius: 10px; /* Rounded corners for captions */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+    transition: background-color 0.4s ease; /* Smooth transition */
+}
+.text:hover {
+    background-color: rgba(0, 0, 0, 0.8); /* Slightly darker on hover */
+}
+.numbertext {
+    color: #ffffff;
+    font-size: 14px; /* Increased font size */
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; /* Matching font */
+    background-color: rgba(0, 0, 0, 0.6); /* Darker background for better contrast */
+    border-radius: 10px; /* Rounded corners */
+}
+.dot {
+    cursor: pointer;
+    height: 10px;
+    width: 10px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+.active, .dot:hover {
+    background-color: #717171;
+}
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: auto;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    user-select: none;
+    border-radius: 50%; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Box shadow */
+}
+.prev {
+    left: 0;
+    border-radius: 0 3px 3px 0;
+}
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Increased shadow on hover */
+}
+
+    </style>
+</head>
+<body>
+    <h1>Welcome to Health Hub!!!</h1>
+
+    <div class="tabs">
+        <a href="http://127.0.0.1:5501/fitness-club/fitnesss.html" target="_blank"><button>About Us</button></a>
+        <a href="http://127.0.0.1:5501/fitness-club/Workout.html" target="_blank"><button>Workout Videos</button></a>
+        <a href="http://127.0.0.1:8001/" target="_blank"><button>Exercises</button></a>
+        <a href="http://127.0.0.1:8000/" target="_blank"><button>Calories Count</button></a>
+        <a href="http://127.0.0.1:8000/" target="_blank"><button>Meals</button></a>
+        <a href="http://127.0.0.1:5501/fitness-club/Waterrr.html" target="_blank"><button>Hydration Time</button></a>
+        <a href="http://127.0.0.1:5000/" target="_blank"><button>Pose Perfect</button></a>
+    </div>
+
+    <div class="slideshow-container">
+        <div class="mySlides fade">
+            <img src="https://static.vecteezy.com/system/resources/previews/001/893/585/original/cute-girl-exercise-healthy-work-out-stretching-cute-cartoon-activities-vector.jpg" alt="Fitness Routine">
+            <div class="text">Elevate your fitness routine with our specialized workouts. Experience tailored exercises designed to challenge and inspire your journey to peak performance.</div>
+        </div>
+
+        <div class="mySlides fade">
+            <img src="https://c8.alamy.com/comp/2PDNH5F/man-does-online-workout-at-home-gym-healthy-lifestyle-living-room-indoor-fitness-exercises-sportsman-watches-video-training-by-laptop-guy-2PDNH5F.jpg" alt="Exercises">
+            <div class="text">With our help, get to know the exercises you need to do!</div>
+        </div>
+
+        <div class="mySlides fade">
+            <img src="https://www.shutterstock.com/image-vector/male-female-characters-counting-calories-600nw-1968718342.jpg" alt="Calories Count">
+            <div class="text">Know about the calories you intake with everything you eat!</div>
+        </div>
+
+        <div class="mySlides fade">
+            <img src="https://thumbs.dreamstime.com/b/nutritionist-concept-weight-loss-program-healthy-food-meal-planning-nutrition-consultation-balance-diet-flat-vector-265587071.jpg" alt="Meals">
+            <div class="text">We would help you choose your right meal!</div>
+        </div>
+
+        <div class="mySlides fade">
+            <img src="https://t3.ftcdn.net/jpg/06/52/04/90/360_F_652049039_OoVTOYu5fpDx8A659HRZzO3HAehJ0XtB.jpg" alt="Meditation and Yoga">
+            <div class="text">Meditate and relax your mind with us!</div>
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <br>
+
+    <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span> 
+        <span class="dot" onclick="currentSlide(2)"></span> 
+        <span class="dot" onclick="currentSlide(3)"></span> 
+        <span class="dot" onclick="currentSlide(4)"></span> 
+        <span class="dot" onclick="currentSlide(5)"></span> 
+    </div>
+
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        // Next/previous controls
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        // Thumbnail image controls
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {slideIndex = 1}    
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";  
+            dots[slideIndex-1].className += " active";
+        }
+    </script>
+</body>
+</html>

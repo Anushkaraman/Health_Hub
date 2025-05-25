@@ -1,0 +1,139 @@
+/* General styling */
+body {
+  background-color: #f6fbf4;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Center the main content */
+.container {
+  max-width: 1200px;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Style the logo */
+.logo {
+  width: 13em;
+  height: 63px;
+}
+
+/* Header styling */
+h1 {
+  font-weight: 300;
+}
+
+h1 strong {
+  font-weight: 600;
+  color: #4b8673;
+}
+
+/* Input styling */
+.inputstyle {
+  padding: 20px !important;
+  border-radius: 0;
+}
+
+/* Button styling */
+.whoop {
+  background-color: #5fd068;
+  width: 8em;
+  font-size: 30px !important;
+  color: #ffffff;
+  border: none;
+}
+
+/* Card styling */
+.card {
+  border: none;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+/* Card image styling */
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+/* Card body styling */
+.card-body {
+  padding: 20px;
+}
+
+/* Adjust margins for headings */
+h2 {
+  margin-bottom: 20px;
+}
+
+h5 {
+  margin-bottom: 10px;
+}
+
+/* Adjust padding for lists */
+ol {
+  padding-left: 20px;
+}
+
+/* Adjust the margin for alert messages */
+.alert {
+  margin-top: 20px;
+}
+
+/* Calories container styling */
+.caloriescont {
+  background-color: #ffffff;
+  padding: 30px;
+}
+
+.caloriescont ul {
+  padding: 0;
+}
+
+.caloriescont ul li {
+  list-style: none;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #efefef;
+  width: 80%;
+}
+
+.caloriescont h3 {
+  color: #4b8673;
+  font-size: 2em;
+  text-transform: capitalize;
+  font-weight: 700;
+}
+
+.caloriescont h5 {
+  color: #4b8673;
+}
+
+/* Serving size styling */
+.servingsize {
+  background-color: #000000;
+  padding: 10px;
+  color: #ffffff;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .input-group {
+      flex-direction: column;
+  }
+
+  .input-group .form-control,
+  .input-group .btn {
+      width: 100%;
+      margin-bottom: 10px;
+  }
+}
