@@ -1,0 +1,16 @@
+# Flask-based backends
+Flask==2.3.2
+flask-cors==4.0.0
+
+# For API requests
+requests==2.31.0
+
+# For image processing and webcam (Pose Corrector)
+opencv-python==4.8.1.78
+mediapipe==0.10.3
+
+# If using environment variables (optional)
+python-dotenv==1.0.0
+
+# Django-specific utilities (only if you're actually using Django anywhere)
+django-mathfilters==1.0.0
