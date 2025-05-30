@@ -12,31 +12,31 @@
 ## 🌟 Features
 
 ### 🥗 Calorie Tracker
-![Calorie Tracker](assets/calorie.png)
+![Calorie Tracker](assets/screenshots/calorie.png.png)
 Keep track of your daily calorie intake and burn, and maintain your fitness goals with precise visual feedback.
 
 ---
 
 ### 🚰 Water Tracker
-![Water Tracker](assets/water.png)
+![Water Tracker](assets/screenshots/water.png.png)
 Never forget to hydrate! Log your water intake throughout the day and set reminders to stay on top of your health.
 
 ---
 
 ### 💪 Exercise Explorer
-![Exercise Explorer](assets/exercise.png)
+![Exercise Explorer](assets/screenshots/exercise.png.png)
 Search and explore exercises tailored to your goals. From beginner to advanced levels, all routines are included.
 
 ---
 
 ### 🎥 Instructional Videos
-![Videos](assets/video.png)
+![Videos](assets/screenshots/video.png.png)
 Watch guided fitness and diet-related videos directly inside the app to improve your routines and techniques.
 
 ---
 
 ### 📈 Progress Chart
-![Chart](assets/chart.png)
+![Chart](assets/screenshots/chart.png.png)
 Visualize your progress over time through interactive and informative charts. Stay motivated by tracking every milestone.
 
 ---
