@@ -5,7 +5,7 @@
 ## 🖼️ Preview
 
 ### 📊 Dashboard
-![Dashboard](assets/screenshort/dashbord.png)
+![Dashboard](assets/screenshots/dashbord.png.png)
 
 ---
 
